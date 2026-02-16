@@ -1,0 +1,164 @@
+@import "../../style/variables.less";
+@import "../../style/mixins.less";
+
+.LockScreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(40, 40, 40, 0.97) 0%, rgba(20, 20, 20, 0.97) 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+
+  &__content {
+    text-align: center;
+    padding: 4rem;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    max-width: 500px;
+    width: 90%;
+  }
+
+  &__icon {
+    font-size: 3rem;
+    color: @color2;
+    margin-bottom: 2rem;
+    text-shadow: 0 0 20px rgba(212, 20, 90, 0.5);
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  h1 {
+    .karla;
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+    font-size: 2.2rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  &__quote {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+    font-style: italic;
+    line-height: 1.6;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__input-container {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+
+    input {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 1rem 1.5rem;
+      color: #ffffff;
+      font-size: 1.2rem;
+      border-radius: 4px;
+      width: 180px;
+      text-align: center;
+      letter-spacing: 0.2rem;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+      
+      &::placeholder {
+        color: rgba(255, 255, 255, 0.3);
+      }
+      
+      &:focus {
+        outline: none;
+        border-color: @color2;
+        box-shadow: 0 0 15px rgba(212, 20, 90, 0.2);
+        background: rgba(255, 255, 255, 0.1);
+      }
+    }
+
+    button {
+      background: @color2;
+      color: white;
+      border: none;
+      padding: 1rem 2rem;
+      font-size: 1.1rem;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      letter-spacing: 1px;
+
+      span {
+        font-size: 1.2rem;
+      }
+
+      &:hover {
+        background: lighten(@color2, 5%);
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(212, 20, 90, 0.3);
+      }
+
+      &:active {
+        transform: translateY(0);
+      }
+    }
+  }
+
+  &__error {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1rem;
+    margin-top: 1.5rem;
+    animation: fadeIn 0.5s ease-in-out;
+    padding: 1rem;
+    border-radius: 4px;
+    display: inline-block;
+  }
+
+  &__hint-container {
+    margin-top: 2.5rem;
+  }
+
+  &__hint-button {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    &:hover {
+      color: @color2;
+    }
+  }
+
+  &__hint {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
+    margin-top: 1rem;
+    animation: fadeIn 0.5s ease-in-out;
+    font-style: italic;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.1); opacity: 0.8; }
+} 

@@ -1,0 +1,55 @@
+body {
+  .karla;
+  margin: 0;
+  overflow: hidden;
+  color: #1d1d1d;
+  background: #000;
+  -webkit-text-size-adjust: 100%;
+  width: 100%;
+  height: 100%;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+
+  // So that 1rem = 10px
+  font-size: 62.5%; 
+}
+
+@import "./variables.less";
+@import "./reset.less";
+@import "./mixins.less";
+@import "../components/**/*.less";
+@import "../sections/**/*.less";
+
+.content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  pointer-events: none;
+}
+
+canvas {
+  .cursor-grab;
+  z-index: -10;
+
+  &.is-grabbing {
+    .cursor-grabbing;
+  }
+}
+
+*::selection {
+  background: @color1; /* WebKit/Blink Browsers */
+  color: #FFF;
+}
+
+*::-moz-selection {
+  background: @color1; /* Gecko Browsers */
+  color: #FFF;
+}

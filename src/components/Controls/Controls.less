@@ -1,0 +1,42 @@
+.Controls {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  @media screen and (max-width: 768px) {
+    height: 100%;
+  }
+
+  &Inner {
+    .padding;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+      height: 100%;
+    }
+  }
+
+  &Group {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    @media screen and (max-width: 768px) {
+      &:first-child {
+        flex-direction: row-reverse;
+      }
+    }
+  }
+ 
+}
+ .RandomWords {
+    position: fixed;
+    bottom: 15px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    display: block;
+  }

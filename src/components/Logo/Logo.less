@@ -1,0 +1,34 @@
+.Logo {
+  .cursor-pointer;
+  pointer-events: initial;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
+  top: 1.6rem;
+  opacity: 0;
+
+  @media screen and (max-width: 768px) {
+    position: absolute;
+    left: 1.6rem;
+  }
+
+  svg {
+    width: 8rem;
+    height: 3.5rem;
+    fill: #fff;
+
+    @media screen and (min-width: 769px) {
+      width: 10rem;
+      height: 4rem;
+    }
+  }
+
+  &:focus {
+    outline: none;
+
+    svg {
+      fill: @color2;
+    }
+  }
+}
